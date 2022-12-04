@@ -37,7 +37,9 @@ const NavBar = () => {
               color="inheit"
               edge="start"
               style={{ outline: 'none' }}
-              onClick={() => {}}
+              onClick={() =>
+                setMobileOpen((previousMobileOpen) => !previousMobileOpen)
+              }
               className={classes.menuButton}
             >
               <Menu />
@@ -79,6 +81,9 @@ const NavBar = () => {
               variant="temporary"
               anchor="right"
               open={mobileOpen}
+              onClose={() =>
+                setMobileOpen((previousMobileOpen) => !previousMobileOpen)
+              }
               className={classes.drawerBackground}
               classes={{ paper: classes.drawerPaper }}
               ModalProps={{ keepMounted: true }}
